@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'next_screen.dart';
+import 'todo_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -57,6 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.white,
               color: Colors.lightBlue,
               onPressed: _navigateToNext),
+            new FlatButton(
+              child: new Text('Go to Todo'),
+              textColor: Colors.white,
+              color: Colors.lightBlue,
+              onPressed: _navigateToTodo),
           ],
         ),
       ),
@@ -71,6 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToNext() {
     Navigator.push(context, new MaterialPageRoute(builder: (context) =>
       new NextScreen()
+    ));
+  }
+
+  void _navigateToTodo() {
+    Navigator.push(context, new MaterialPageRoute(builder: (context) =>
+      new TodoScreen()
     ));
   }
 }
