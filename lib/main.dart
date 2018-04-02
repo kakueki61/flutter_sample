@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'next_screen.dart';
 import 'todo_screen.dart';
+import 'home_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -53,16 +54,30 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            new FlatButton(
-              child: new Text('Go to next'),
-              textColor: Colors.white,
-              color: Colors.lightBlue,
-              onPressed: _navigateToNext),
-            new FlatButton(
-              child: new Text('Go to Todo'),
-              textColor: Colors.white,
-              color: Colors.lightBlue,
-              onPressed: _navigateToTodo),
+            new Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new FlatButton(
+                child: new Text('Go to next'),
+                textColor: Colors.white,
+                color: Colors.lightBlue,
+                onPressed: _navigateToNext),
+            ),
+            new Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new FlatButton(
+                child: new Text('Go to Todo'),
+                textColor: Colors.white,
+                color: Colors.lightBlue,
+                onPressed: _navigateToTodo),
+            ),
+            new Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new FlatButton(
+                child: new Text('Go to HomeScreen'),
+                textColor: Colors.white,
+                color: Colors.lightBlue,
+                onPressed: _navigateToHome),
+            ),
           ],
         ),
       ),
@@ -83,6 +98,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToTodo() {
     Navigator.push(context, new MaterialPageRoute(builder: (context) =>
       new TodoScreen()
+    ));
+  }
+
+  void _navigateToHome() {
+    Navigator.push(context, new MaterialPageRoute(builder: (context) =>
+      new HomeScreen()
     ));
   }
 }
