@@ -8,7 +8,7 @@ class NextScreen extends StatelessWidget {
         title: new Text('Next screen'),
       ),
       body: new Center(
-        child: new FlatButton(
+        child: new RaisedButton(
           child: new Text('Back'),
           textColor: Colors.white,
           color: Colors.lightBlue,

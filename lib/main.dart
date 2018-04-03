@@ -117,8 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _navigateToNavigate() {
-    Navigator.push(context, new MaterialPageRoute(builder: (context) =>
-    new NavigateScreen()
+    Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) =>
+      new NavigateScreen()
     ));
   }
 }
