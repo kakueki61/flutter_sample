@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'next_screen.dart';
 import 'todo_screen.dart';
 import 'home_screen.dart';
+import 'navigate_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -78,6 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.lightBlue,
                 onPressed: _navigateToHome),
             ),
+            new Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new FlatButton(
+                child: new Text('Go to NavigateScreen'),
+                textColor: Colors.white,
+                color: Colors.lightBlue,
+                onPressed: _navigateToNavigate),
+            ),
           ],
         ),
       ),
@@ -104,6 +113,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void _navigateToHome() {
     Navigator.push(context, new MaterialPageRoute(builder: (context) =>
       new HomeScreen()
+    ));
+  }
+
+  void _navigateToNavigate() {
+    Navigator.push(context, new MaterialPageRoute(builder: (context) =>
+    new NavigateScreen()
     ));
   }
 }
